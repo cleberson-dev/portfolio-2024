@@ -16,7 +16,7 @@ export default function Home() {
       <p className="w-64">{info.description}</p>
 
       <footer className="absolute bottom-10">
-        <SocialNetworks />
+        <SocialNetworks socials={info.socials} />
       </footer>
     </main>
   );

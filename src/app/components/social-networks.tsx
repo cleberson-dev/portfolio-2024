@@ -1,10 +1,16 @@
 import cls from "classnames";
-import info from "@/info.json";
 
-export default function SocialNetworks() {
+type Props = {
+  socials: {
+    href: string;
+    title: string;
+  }[];
+};
+
+export default function SocialNetworks({ socials }: Props) {
   return (
-    <ul>
-      {info.socials.map((social) => (
+    <ul data-testid="social-networks-list">
+      {socials.map((social) => (
         <li
           key={social.href}
           className={cls([
