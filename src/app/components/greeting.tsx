@@ -1,12 +1,11 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-
-const greetings = ["Hello", "Hi", "Greetings", "Welcome", "Hey"];
+import info from "@/info.json";
 
 export default function Greeting() {
   const [currentGreetingIdx, setCurrentGreetingIdx] = useState(0);
   const currentGreeting = useMemo(
-    () => greetings[currentGreetingIdx % greetings.length],
+    () => info.greetings[currentGreetingIdx % info.greetings.length],
     [currentGreetingIdx]
   );
 

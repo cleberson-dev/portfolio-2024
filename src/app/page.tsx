@@ -1,8 +1,7 @@
-import Greeting from "@/components/Greeting";
-import SocialNetworks from "@/components/SocialNetworks";
+import info from "@/info.json";
 
-const description =
-  "Developing user-friendly, responsive, maintainable and performant web applications.";
+import Greeting from "@/app/components/greeting";
+import SocialNetworks from "@/app/components/social-networks";
 
 export default function Home() {
   return (
@@ -14,7 +13,7 @@ export default function Home() {
         </strong>
       </h1>
       <hr className="my-4 opacity-10 w-40" />
-      <p className="w-64">{description}</p>
+      <p className="w-64">{info.description}</p>
 
       <footer className="absolute bottom-10">
         <SocialNetworks />

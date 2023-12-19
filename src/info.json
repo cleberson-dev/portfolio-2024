@@ -1,0 +1,9 @@
+{
+  "description": "Developing user-friendly, responsive, maintainable and performant web applications.",
+  "socials": [
+    { "href": "https://www.linkedin.com/in/clebersondev", "title": "Linkedin" },
+    { "href": "https://www.github.com/cleberson-dev", "title": "GitHub" },
+    { "href": "https://www.instagram.com/cbjr.dev", "title": "Instagram" }
+  ],
+  "greetings": ["Hello", "Hi", "Greetings", "Welcome", "Hey"]
+}
