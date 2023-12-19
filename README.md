@@ -13,3 +13,12 @@ pnpm dev
 # or
 bun dev
 ```
+
+## Technologies used
+- Next.js (v14)
+- React.js (v18)
+- Typescript (v5)
+- Tailwind CSS (v3)
+- ESLint (v8)
+- Vitest (v1.0.4)
+- React Testing Library (v14.1.2)
