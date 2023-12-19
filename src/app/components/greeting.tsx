@@ -1,12 +1,15 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import info from "@/info.json";
 
-export default function Greeting() {
+type Props = {
+  greetings: string[];
+};
+
+export default function Greeting({ greetings }: Props) {
   const [currentGreetingIdx, setCurrentGreetingIdx] = useState(0);
   const currentGreeting = useMemo(
-    () => info.greetings[currentGreetingIdx % info.greetings.length],
-    [currentGreetingIdx]
+    () => greetings[currentGreetingIdx % greetings.length],
+    [currentGreetingIdx, greetings]
   );
 
   useEffect(() => {

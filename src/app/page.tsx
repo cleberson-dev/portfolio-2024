@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-4">
       <h1>
-        <Greeting />
+        <Greeting greetings={info.greetings} />
         <strong className="block uppercase font-bold text-4xl">
           cleberson<span className="text-purple-600">.dev</span>
         </strong>
