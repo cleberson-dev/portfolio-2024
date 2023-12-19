@@ -1,4 +1,5 @@
 import Greeting from "@/components/Greeting";
+import SocialNetworks from "@/components/SocialNetworks";
 
 const description =
   "Developing user-friendly, responsive, maintainable and performant web applications.";
@@ -14,6 +15,10 @@ export default function Home() {
       </h1>
       <hr className="my-4 opacity-10 w-40" />
       <p className="w-64">{description}</p>
+
+      <footer className="absolute bottom-10">
+        <SocialNetworks />
+      </footer>
     </main>
   );
 }
