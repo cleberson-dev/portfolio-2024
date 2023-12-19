@@ -10,7 +10,11 @@ export default function SocialNetworks() {
       {socials.map((social) => (
         <li
           key={social.href}
-          className="lowercase flex flex-col items-center hover:text-white/50 transition-colors after:block after:my-1 after:w-1 after:h-1 after:bg-white/10 after:rounded-full last:after:hidden"
+          className={`
+            lowercase flex flex-col items-center transition-colors hover:text-white/50
+            after:block after:my-1 after:w-1 after:h-1 after:bg-white/10 after:rounded-full 
+            last:after:hidden
+          `}
         >
           <a href={social.href} target="_blank" rel="noopener noreferrer">
             {social.title}
