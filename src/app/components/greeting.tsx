@@ -6,9 +6,10 @@ const GREETING_DURATION_IN_MS = 3000;
 
 type Props = {
   greetings: string[];
+  callingMyName: string;
 };
 
-export default function Greeting({ greetings }: Props) {
+export default function Greeting({ greetings, callingMyName }: Props) {
   const [currentGreetingIdx, setCurrentGreetingIdx] = useState(0);
   const currentGreeting = useMemo(
     () => greetings[currentGreetingIdx % greetings.length] + "!",
@@ -26,7 +27,7 @@ export default function Greeting({ greetings }: Props) {
   return (
     <span className="text-xl">
       <TypewriterText text={currentGreeting} />
-      <span className="block text-xs">I&apos;m</span>
+      <span className="block text-xs">{callingMyName}</span>
     </span>
   );
 }

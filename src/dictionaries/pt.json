@@ -1,0 +1,5 @@
+{
+  "description": "Desenvolvendo web apps amigáveis ao usuário, responsivos, manuteníveis e performantes.",
+  "greetings": ["Olá", "Oi", "Saudações", "Bem-vindo", "Ei"],
+  "callingMyName": "Eu sou"
+}
