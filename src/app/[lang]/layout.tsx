@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inria_Sans } from "next/font/google";
 import cls from "classnames";
 import "./globals.css";
+import ThemeProvider from "@/app/theme-provider";
 
 const inriaSans = Inria_Sans({
   weight: ["300", "400", "700"],
@@ -32,7 +33,7 @@ export default function RootLayout({
           "min-h-[100svh] flex flex-col items-center justify-center",
         ])}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

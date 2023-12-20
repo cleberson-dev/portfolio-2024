@@ -5,6 +5,7 @@ import { type Locale } from "@/i18n-config";
 import Greeting from "@/app/components/greeting";
 import SocialNetworks from "@/app/components/social-networks";
 import LanguageSwitcher from "@/app/components/language-switcher";
+import ThemeSwitcher from "../components/theme-switcher";
 
 export default async function Home({
   params: { lang },
@@ -15,7 +16,8 @@ export default async function Home({
 
   return (
     <>
-      <header className="flex justify-end absolute top-6 right-4 w-full">
+      <header className="flex justify-end items-start gap-x-1 absolute top-6 right-4 w-full">
+        <ThemeSwitcher />
         <LanguageSwitcher lang={lang} />
       </header>
       <main className="px-4">
