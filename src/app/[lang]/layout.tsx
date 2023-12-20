@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inria_Sans } from "next/font/google";
+import cls from "classnames";
 import "./globals.css";
 
 const inriaSans = Inria_Sans({
@@ -25,7 +26,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang}>
-      <body className={inriaSans.className}>{children}</body>
+      <body
+        className={cls([
+          inriaSans.className,
+          "min-h-[100svh] flex flex-col items-center justify-center",
+        ])}
+      >
+        {children}
+      </body>
     </html>
   );
 }
