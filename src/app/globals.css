@@ -18,3 +18,38 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 }
+
+
+/* Typewriting Effect */
+.typewriter-container {
+  display: inline-block;
+}
+
+.typewriter {
+  display: block;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  border-right-width: .15em; /* The typwriter cursor */
+  border-right-style: solid; /* The typwriter cursor */
+  border-right-color: blueviolet;
+  width: 0;
+  animation: 
+    typing 3s steps(3, end) infinite,
+    blink-caret .5s step-end infinite;
+  animation-fill-mode: forwards;
+  letter-spacing: 2px;
+}
+
+/* The typing effect */
+@keyframes typing {
+  0% { width: 0; }
+  15% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 100%; }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: blueviolet; }
+}
