@@ -7,6 +7,8 @@
 - [x] Fix website's height.
 - [x] Add toggle for Localization
 - [x] Light/Dark Theme (with UI toggles, not only based on browser preferences)
+- [] Configure Husky for linting pre-commit
+- [] Configure Husky for building and testing pre-push
 - [] Add introduction animations (in page load)
 - [] Transitions for Scroll/Swipe (if there's more than one screen/page/section)
 - [] Adapt to Desktop Screens (Make them larger)
