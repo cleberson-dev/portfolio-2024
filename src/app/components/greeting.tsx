@@ -1,5 +1,8 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
+import TypewriterText from "./typewriter-text";
+
+const GREETING_DURATION_IN_MS = 3000;
 
 type Props = {
   greetings: string[];
@@ -14,24 +17,15 @@ export default function Greeting({ greetings }: Props) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentGreetingIdx((prev) => prev + 1);
-    }, 3000);
+      setCurrentGreetingIdx((prevIdx) => prevIdx + 1);
+    }, GREETING_DURATION_IN_MS);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <span className="text-xl">
-      <span className="typewriter-container">
-        <span
-          className="typewriter"
-          style={{
-            animationTimingFunction: `steps(${currentGreeting.length})`,
-          }}
-        >
-          {currentGreeting}
-        </span>
-      </span>
+      <TypewriterText text={currentGreeting} />
       <span className="block text-xs">I&apos;m</span>
     </span>
   );
