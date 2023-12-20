@@ -1,5 +1,6 @@
 import info from "@/info.json";
-import { Locale, getDictionary } from "@/get-dictionary";
+import { getDictionary } from "@/get-dictionary";
+import type { Locale } from "@/i18n-config";
 
 import Greeting from "@/app/components/greeting";
 import SocialNetworks from "@/app/components/social-networks";

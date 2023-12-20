@@ -12,13 +12,19 @@ export const metadata: Metadata = {
   description: "Front-end developer's Portfolio",
 };
 
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "pt" }];
+}
+
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <body className={inriaSans.className}>{children}</body>
     </html>
   );
