@@ -13,7 +13,7 @@ export default async function Home({
   const dictionary = await getDictionary(lang);
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-4">
+    <main className="min-h-[100svh] flex flex-col items-center justify-center p-4">
       <h1>
         <Greeting
           greetings={dictionary.greetings}

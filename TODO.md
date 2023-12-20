@@ -4,6 +4,7 @@
 - [x] Add localization (English and Portuguese)
 - [x] Deploy!
 - [x] Apply cleberson.dev domain name
+- [x] Fix website's height.
 - [] Light/Dark Theme (with UI toggles, not only based on browser preferences)
 - [] Add toggle for Localization
 - [] Add introduction animations (in page load)
