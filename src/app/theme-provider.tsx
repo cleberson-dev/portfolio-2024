@@ -1,19 +1,24 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 type Themes = "dark" | "light";
 
 export const THEME_KEY = "theme";
-export const ThemeContext = createContext({
-  theme: "dark",
+export const ThemeContext = createContext<{
+  theme: Themes | null;
+  toggleTheme: () => void;
+}>({
+  theme: null,
   toggleTheme: () => {},
 });
 
 function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Themes>(
-    (localStorage.getItem(THEME_KEY) as Themes) ?? "dark"
-  );
+  const [theme, setTheme] = useState<Themes | null>(null);
+
+  useEffect(() => {
+    setTheme(localStorage.getItem(THEME_KEY) as Themes);
+  }, []);
 
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
@@ -24,7 +29,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {/* YES! I KNOW. I'M ASHAMED OF IT. BUT RIGHT NOW IT WORKS */}
-      <span className={theme + "-theme hidden"} />
+      {theme && <span className={theme + "-theme hidden"} />}
 
       {children}
     </ThemeContext.Provider>
