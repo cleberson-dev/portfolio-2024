@@ -3,6 +3,7 @@ import { Inria_Sans } from "next/font/google";
 import cls from "classnames";
 import "./globals.css";
 import ThemeProvider from "@/app/theme-provider";
+import { Analytics } from "@vercel/analytics/react";
 
 const inriaSans = Inria_Sans({
   weight: ["300", "400", "700"],
@@ -34,6 +35,7 @@ export default function RootLayout({
         ])}
       >
         <ThemeProvider>{children}</ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
