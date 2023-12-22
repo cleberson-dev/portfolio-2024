@@ -4,6 +4,7 @@ import cls from "classnames";
 import "./globals.css";
 import ThemeProvider from "@/app/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
+import GoogleAnalytics from "../components/google-analytics";
 
 const inriaSans = Inria_Sans({
   weight: ["300", "400", "700"],
@@ -36,6 +37,10 @@ export default function RootLayout({
       >
         <ThemeProvider>{children}</ThemeProvider>
         <Analytics />
+
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
+          <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+        )}
       </body>
     </html>
   );
