@@ -19,7 +19,12 @@ export default function SocialNetworks({ socials }: Props) {
             "last:after:hidden",
           ])}
         >
-          <a href={social.href} target="_blank" rel="noopener noreferrer">
+          <a
+            className="social-link"
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {social.title}
           </a>
         </li>
