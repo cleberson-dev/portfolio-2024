@@ -31,23 +31,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang}>
-      <Head>
-        {process.env.NEXT_PUBLIC_GTM_ANALYTICS && (
-          <Script
-            id="gtm-head-script"
-            dangerouslySetInnerHTML={{
-              __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ANALYTICS}');
-            `,
-            }}
-          ></Script>
-        )}
-        {/* <!-- End Google Tag Manager --> */}
-      </Head>
       <body
         className={cls([
           inriaSans.className,
@@ -56,18 +39,33 @@ export default function RootLayout({
       >
         {/* <!-- Google Tag Manager (noscript) --> */}
         {process.env.NEXT_PUBLIC_GTM_ANALYTICS && (
-          <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ANALYTICS}`}
-              height="0"
-              width="0"
-              className="invisible hidden"
-            ></iframe>
-          </noscript>
+          <>
+            <Script
+              id="gtm-head-script"
+              dangerouslySetInnerHTML={{
+                __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ANALYTICS}');
+            `,
+              }}
+            ></Script>
+            <noscript>
+              <iframe
+                src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ANALYTICS}`}
+                height="0"
+                width="0"
+                className="invisible hidden"
+              ></iframe>
+            </noscript>
+          </>
         )}
         {/* <!-- End Google Tag Manager (noscript) --> */}
 
         <ThemeProvider>{children}</ThemeProvider>
+
         <Analytics />
 
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
